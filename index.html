@@ -1,180 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Yazin | Portfolio</title>
-<style>
-body {
-  margin: 0;
-  padding: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #ffffff;
-  min-height: 100vh;
-  position: relative;
-  overflow-x: hidden;
-}
+    <meta charset="UTF-8">
+    <title>yazin's blog</title>
+    <style>
+        body {
+            font-family: monospace;
+            background: #111;
+            color: #ccc;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.5;
+        }
 
-#background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #1a0033 0%, #330066 50%, #1a0033 100%);
-  z-index: -2;
-}
+        h1 {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
 
-#binary-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
+        article {
+            margin-bottom: 40px;
+        }
 
-.content {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  margin: 0 auto;
-  background: rgba(0, 0, 0, 0.3);
-  padding: 30px;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px rgba(138, 43, 226, 0.3);
-}
+        .date {
+            color: #666;
+            font-size: 12px;
+        }
 
-h2, h3 {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
+        h2 {
+            font-size: 16px;
+            margin: 5px 0;
+        }
 
-h3 {
-  color: #e0b3ff;
-  font-size: 1.2em;
-  line-height: 1.6;
-}
-
-h2 {
-  color: #c77dff;
-  border-bottom: 2px solid #9d4edd;
-  padding-bottom: 10px;
-  margin-top: 30px;
-}
-
-ul {
-  line-height: 1.8;
-}
-
-li {
-  margin: 10px 0;
-}
-
-p {
-  line-height: 1.8;
-  color: #e0e0e0;
-}
-
-a {
-  color: #c77dff;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #e0b3ff;
-  text-decoration: underline;
-}
-</style>
+        p {
+            font-size: 14px;
+            color: #999;
+        }
+    </style>
 </head>
 <body>
-<div id="background"></div>
-<canvas id="binary-canvas"></canvas>
+    <h1>yazin's blog</h1>
+    <article>
+      <div class="date">14-03-2026
+        <h2>ext2 vs exfat, and how i decided</h2>
+        <p>long story short, ext2 was being a pain in my ass in vnix, so i decided to go down the exfat route. hopefully exfat isnt as much as a pain as ext2 was.</p>
+    </article>
+    <article>
+        <div class="date">03-03-2026</div>
+        <h2>the sysretq bug</h2>
+        <p>spent 3 weeks debugging why sysretq corrupted my stack. switched to iretq. works now.</p>
+    </article>
 
-<div class="content">
-<h3>Hello there! I'm Yazin, and I'm a (self-proclaimed) software engineer and Operating Systems Developer.</h3>
-<h2>Timeline of my events:</h2>
-<ul>
-<li>Started learning programming in 2022</li>
-<li>Started OSDev in 2023</li>
-<li>Founded a FOSS-Dedicated project in 2024 (pending 501c3 status)</li>
-</ul>
-<p>I now manage over 7 projects, and work with people around the world to accomplish my goals.<br>Currently, I'm learning new things such as 3D Design and Web development, as you can see via this portfolio</p>
-<h2>Skills & Experience:</h2>
-<ul>
-<li>Linux system administration and configuration</li>
-<li>Server management and deployment</li>
-<li>General tech troubleshooting and support</li>
-<li>BASH scripting - 3 years of experience</li>
-</ul>
-<h2>Programming Languages:</h2>
-<ul>
-<li>C/C++ - System programming and OS development</li>
-<li>Python - Scripting and automation</li>
-<li>JavaScript - Web development</li>
-<li>Assembly - Low-level programming</li>
-<li>Rust - Systems programming</li>
-</ul>
-<h2>Projects I've made:</h2>
-<p>Aspen Software Foundation | A FOSS-Dedicated software foundation<br>VNiX Operating System  | A hybrid-kernel OS that plans to run more than one executable type</p>
-<h2>My Achievements:</h2>
-<ul>
-<li><a href="https://www.linkedin.com/posts/gdg-cairo_mvpsprintroadshow-startups-techinnovation-activity-7396628897846595585-yTSc?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGHVlp4B_UsU0tVp2s8gVHs3-4e0eaGU0G8" target="_blank">Participated in the Google Developer Group in Cairo, Egypt</a></li>
-<p>(more to come soon)</p>
-</ul>
-<h2>Links:</h2>
-<ul>
-<li><a href="https://github.com/0xFF3E-VESA" target="_blank">My GitHub</a></li>
-<li><a href="https://www.linkedin.com/in/yazin-tantawi-166845399/" target="_blank"> My LinkedIn</a></li>
-<li><a href="https://aspensoftwarefoundation.com" target="_blank">Aspen Software Foundation</a></li>
-<li><a href="https://github.com/Aspen-Software-Foundation/VNiX-x86_64" target="_blank">VNiX Operating System</a></li>
-</ul>
-</div>
+    <article>
+        <div class="date">19-02-2026</div>
+        <h2>ring-3 works</h2>
+        <p>vnix can finally do syscalls without exploding. next: ext2 file reading.</p>
+    </article>
 
-<script>
-const canvas = document.getElementById('binary-canvas');
-const ctx = canvas.getContext('2d');
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-const columns = Math.floor(canvas.width / 20);
-const drops = [];
-
-for (let i = 0; i < columns; i++) {
-  drops[i] = Math.random() * -100;
-}
-
-function drawBinary() {
-  ctx.fillStyle = 'rgba(26, 0, 51, 0.05)';
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  
-  ctx.font = '15px monospace';
-  
-  for (let i = 0; i < drops.length; i++) {
-    const binary = Math.random() > 0.5 ? '1' : '0';
-    
-    const gradient = ctx.createLinearGradient(0, drops[i] * 20 - 100, 0, drops[i] * 20);
-    gradient.addColorStop(0, 'rgba(157, 78, 221, 0)');
-    gradient.addColorStop(0.5, 'rgba(199, 125, 255, 0.8)');
-    gradient.addColorStop(1, 'rgba(224, 179, 255, 1)');
-    
-    ctx.fillStyle = gradient;
-    ctx.fillText(binary, i * 20, drops[i] * 20);
-    
-    if (drops[i] * 20 > canvas.height && Math.random() > 0.975) {
-      drops[i] = 0;
-    }
-    
-    drops[i]++;
-  }
-}
-
-setInterval(drawBinary, 50);
-
-window.addEventListener('resize', () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-});
-</script>
+    <article>
+        <div class="date">START(dd-mm-yyyy)</div>
+        <h2>hello world</h2>
+        <p>starting a blog. mostly kernel stuff and flight sim things.</p>
+    </article>
 </body>
 </html>
